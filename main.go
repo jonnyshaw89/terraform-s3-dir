@@ -30,6 +30,8 @@ func main() {
 		os.Exit(1)
 	}
 
+    fmt.Fprintf(os.Stderr, "ARGS: %s", args)
+
 	rootDir := args[0]
 	bucketName := args[1]
 	dependsOn := args[2]
