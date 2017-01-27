@@ -32,6 +32,7 @@ func main() {
 
 	rootDir := args[0]
 	bucketName := args[1]
+	dependsOn := args[2]
 
 	resourcesMap := map[string]interface{}{}
 	result := map[string]interface{}{
@@ -121,6 +122,7 @@ func main() {
 		resourceName := fmt.Sprintf("%x", hasher.Sum(nil))
 
 		resourcesMap[resourceName] = map[string]interface{}{
+		    "depends_on"    [...]string{dependsOn},
 			"bucket":       bucketName,
 			"key":          relPath,
 			"source":       path,
