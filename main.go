@@ -25,7 +25,7 @@ func main() {
 	}
 
 	args := getopt.Args()
-	if len(args) != 2 {
+	if len(args) != 3 {
 		getopt.PrintUsage(os.Stderr)
 		os.Exit(1)
 	}
