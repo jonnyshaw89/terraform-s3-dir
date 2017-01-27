@@ -17,7 +17,7 @@ var exclude = getopt.ListLong("exclude", 'x', "", "glob patterns to exclude")
 var help = getopt.BoolLong("help", 'h', "", "print this help")
 
 func main() {
-	getopt.SetParameters("<root dir> <bucket name>")
+	getopt.SetParameters("<root dir> <bucket name> <depends on>")
 	getopt.Parse()
 	if *help {
 		getopt.PrintUsage(os.Stdout)
@@ -29,8 +29,6 @@ func main() {
 		getopt.PrintUsage(os.Stderr)
 		os.Exit(1)
 	}
-
-    fmt.Fprintf(os.Stderr, "ARGS: %s", args)
 
 	rootDir := args[0]
 	bucketName := args[1]
